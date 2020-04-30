@@ -19,7 +19,12 @@
         </div>
         <button class="button1">
           <router-link :to="'/bugs'">
-            <img src="../assets/bug.png" alt="fish-img" class="fish-img" />
+            <img src="../assets/bug.png" alt="bug-img" class="bug-img" />
+          </router-link>
+        </button>
+        <button class="button1">
+          <router-link :to="'/Flowers'">
+            <img src="../assets/flower.png" alt="flower-img" class="flower-img" />
           </router-link>
         </button>
         <button @click="toggle_hemisphere = !toggle_hemisphere" class="button1">
@@ -321,8 +326,11 @@ button.button1:hover {
   text-decoration: none;
   color: black;
 }
-.fish-img {
+.bug-img {
   width: 25px;
+}
+.flower-img {
+  width: 17px;
 }
 
 .filter-click,

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Table from "../views/Table.vue";
+import Flowers from "../views/Flowers.vue";
 import Bugs from "../views/Bugs.vue";
 import Fish from "../views/Fish.vue";
 
@@ -14,9 +14,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/table",
-    name: "Table",
-    component: Table,
+    path: "/Flowers",
+    name: "Flowers",
+    component: Flowers,
   },
   {
     path: "/Bugs",

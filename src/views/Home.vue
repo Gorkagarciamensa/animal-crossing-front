@@ -3,7 +3,7 @@
     <div class="main-menu">
       <div>
         <h1>Welcome to Animal Crossing New Horizon's Guide!</h1>
-        <h4>Here you can find a guide for bugs and fishes</h4>
+        <h4>Here you can find a guide for bugs, fishes and flowers</h4>
       </div>
       <div class="flex-button">
         <router-link :to="'/Bugs'">
@@ -11,6 +11,9 @@
         </router-link>
         <router-link :to="'/Fish'">
           <button class="button1">Go to Fish</button>
+        </router-link>
+        <router-link :to="'/Flowers'">
+          <button class="button1">Go to Flowers</button>
         </router-link>
       </div>
     </div>

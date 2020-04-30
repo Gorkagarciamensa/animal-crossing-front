@@ -22,6 +22,12 @@
             <img src="../assets/fish.png" alt="fish-img" class="fish-img" />
           </router-link>
         </button>
+        <button class="button1">
+           <router-link :to="'/Flowers'">
+            <img src="../assets/flower.png" alt="flower-img" class="flower-img" />
+          </router-link>
+        </button>
+        </button>
         <button @click="toggle_hemisphere = !toggle_hemisphere" class="button1">
           <span v-if="toggle_hemisphere">North Hemisphere</span>
           <span v-else>South Hemisphere</span>
@@ -116,7 +122,20 @@ export default {
       filter_by_rarity: [],
       //sorting
       arraySortBy: ["Name Asc", "Name Desc", "Price Down", "Price Up"],
-      sortBy: "Name Asc"
+      sortBy: "Name Asc",
+      months: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "November",
+        "December"
+      ]
     };
   },
   watch: {},
@@ -153,27 +172,16 @@ export default {
         }
         if (this.sortBy == "Name Asc") {
           data_filter = data_filter.sort((a, b) => {
-            if (a.name > b.name) {
-              return 1;
-            }
-            if (a.name < b.name) {
-              return -1;
-            }
+            if (a.name > b.name) return 1;
             return 0;
           });
         }
         if (this.sortBy == "Name Desc") {
           data_filter = data_filter.sort((a, b) => {
-            if (a.name > b.name) {
-              return -1;
-            }
-            if (a.name < b.name) {
-              return -1;
-            }
+            if (a.name > b.name) return -1;
             return 0;
           });
         }
-
         return data_filter;
       }
 
@@ -194,23 +202,13 @@ export default {
       }
       if (this.sortBy == "Name Asc") {
         data_filter = data_filter.sort((a, b) => {
-          if (a.name > b.name) {
-            return 1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
+          if (a.name > b.name) return 1;
           return 0;
         });
       }
       if (this.sortBy == "Name Desc") {
         data_filter = data_filter.sort((a, b) => {
-          if (a.name > b.name) {
-            return -1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
+          if (a.name > b.name) return -1;
           return 0;
         });
       }
@@ -322,6 +320,9 @@ button.button1:hover {
 }
 .fish-img {
   width: 25px;
+}
+.flower-img{
+  width: 17px;
 }
 
 .filter-click,
